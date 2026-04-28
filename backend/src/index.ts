@@ -14,8 +14,8 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
-app.use('/api/auth', authRoutes);
-app.use('/api/loans', loanRoutes);
+app.use('/auth', authRoutes);
+app.use('/loans', loanRoutes);
 
 // Basic Route
 app.get('/', (req, res) => {
