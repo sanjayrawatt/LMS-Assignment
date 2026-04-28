@@ -1,7 +1,9 @@
 import axios from 'axios';
 
+const isProd = typeof window !== 'undefined' && !window.location.hostname.includes('localhost');
+
 const api = axios.create({
-  baseURL: 'http://localhost:9006/api',
+  baseURL: isProd ? '/api' : 'http://localhost:9006/api',
 });
 
 api.interceptors.request.use((config) => {
